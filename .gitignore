@@ -1,0 +1,10 @@
+node_modules/
+.local/
+__pycache__/
+.env
+.env.*
+*.ppt
+*.pptx
+*.doc
+*.docx
+*.pdf

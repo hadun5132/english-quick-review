@@ -1,0 +1,292 @@
+{
+  "unit": 2,
+  "title": "Where Are My Pencils?",
+  "words": [
+    {
+      "word": "house",
+      "pos": "n.",
+      "meaning": "房子",
+      "example": "Their house has a green door.",
+      "translation": "他們的房子有一扇綠門。"
+    },
+    {
+      "word": "parents",
+      "pos": "n.",
+      "meaning": "父母親",
+      "example": "My parents are at the park.",
+      "translation": "我爸媽在公園。"
+    },
+    {
+      "word": "living room",
+      "pos": "n.",
+      "meaning": "客廳",
+      "example": "We play cards in the living room.",
+      "translation": "我們在客廳打牌。"
+    },
+    {
+      "word": "wall",
+      "pos": "n.",
+      "meaning": "牆壁",
+      "example": "A map is on the wall.",
+      "translation": "牆上有張地圖。"
+    },
+    {
+      "word": "purple",
+      "pos": "adj.; n.",
+      "meaning": "紫色（的）",
+      "example": "My sister has a purple bag.",
+      "translation": "我妹妹有一個紫色包包。"
+    },
+    {
+      "word": "favorite",
+      "pos": "adj.; n.",
+      "meaning": "最喜愛（的）",
+      "example": "This is my favorite song.",
+      "translation": "這是我最喜歡的歌。"
+    },
+    {
+      "word": "color",
+      "pos": "n.",
+      "meaning": "顏色",
+      "example": "What color is your hat?",
+      "translation": "你的帽子是什麼顏色？"
+    },
+    {
+      "word": "kitchen",
+      "pos": "n.",
+      "meaning": "廚房",
+      "example": "Dad is in the kitchen.",
+      "translation": "爸爸在廚房。"
+    },
+    {
+      "word": "dining room",
+      "pos": "n.",
+      "meaning": "餐廳；飯廳",
+      "example": "The dining room has two windows.",
+      "translation": "飯廳有兩扇窗。"
+    },
+    {
+      "word": "but",
+      "pos": "conj.",
+      "meaning": "但是",
+      "example": "I'm tired, but I'm happy.",
+      "translation": "我很累，但是我很開心。"
+    },
+    {
+      "word": "gray",
+      "pos": "adj.; n.",
+      "meaning": "灰色（的）",
+      "example": "That gray cat is sleepy.",
+      "translation": "那隻灰貓想睡覺。"
+    },
+    {
+      "word": "brown",
+      "pos": "adj.; n.",
+      "meaning": "棕色（的）",
+      "example": "These brown shoes are mine.",
+      "translation": "這些棕色鞋子是我的。"
+    },
+    {
+      "word": "cookie",
+      "pos": "n.",
+      "meaning": "餅乾",
+      "example": "There is a cookie on the plate.",
+      "translation": "盤子上有一片餅乾。"
+    },
+    {
+      "word": "mice",
+      "pos": "n.",
+      "meaning": "老鼠（mouse 的複數）",
+      "example": "Two mice run under the desk.",
+      "translation": "兩隻老鼠跑到書桌底下。"
+    },
+    {
+      "word": "maybe",
+      "pos": "adv.",
+      "meaning": "也許",
+      "example": "Maybe your book is in my bag.",
+      "translation": "也許你的書在我的包包裡。"
+    },
+    {
+      "word": "sofa",
+      "pos": "n.",
+      "meaning": "沙發",
+      "example": "My brother is on the sofa.",
+      "translation": "我弟弟在沙發上。"
+    },
+    {
+      "word": "hungry",
+      "pos": "adj.",
+      "meaning": "飢餓的",
+      "example": "I'm hungry after school.",
+      "translation": "放學後我很餓。"
+    },
+    {
+      "word": "notebook",
+      "pos": "n.",
+      "meaning": "筆記本",
+      "example": "I have a yellow notebook.",
+      "translation": "我有一本黃色筆記本。"
+    },
+    {
+      "word": "marker",
+      "pos": "n.",
+      "meaning": "麥克筆；記號筆",
+      "example": "Use a red marker for your name.",
+      "translation": "用紅色麥克筆寫你的名字。"
+    },
+    {
+      "word": "brush",
+      "pos": "n.",
+      "meaning": "筆刷；毛筆",
+      "example": "My paintbrush is new. This brush is old.",
+      "translation": "我的畫筆是新的。這支筆刷是舊的。"
+    },
+    {
+      "word": "gift",
+      "pos": "n.",
+      "meaning": "禮物",
+      "example": "This gift is for you.",
+      "translation": "這份禮物是給你的。"
+    },
+    {
+      "word": "pencil case",
+      "pos": "n.",
+      "meaning": "鉛筆盒",
+      "example": "My pencil case is under my chair.",
+      "translation": "我的鉛筆盒在椅子下。"
+    },
+    {
+      "word": "bathroom",
+      "pos": "n.",
+      "meaning": "浴室；廁所",
+      "example": "The bathroom is next to my room.",
+      "translation": "浴室在我房間旁邊。"
+    },
+    {
+      "word": "table",
+      "pos": "n.",
+      "meaning": "桌子",
+      "example": "The cups are on the table.",
+      "translation": "杯子在桌上。"
+    },
+    {
+      "word": "bedroom",
+      "pos": "n.",
+      "meaning": "臥室",
+      "example": "My bedroom is small and bright.",
+      "translation": "我的臥室又小又明亮。"
+    },
+    {
+      "word": "near",
+      "pos": "prep.",
+      "meaning": "在……附近",
+      "example": "Our school is near the library.",
+      "translation": "我們學校在圖書館附近。"
+    },
+    {
+      "word": "between",
+      "pos": "prep.",
+      "meaning": "在……之間",
+      "example": "The ball is between two boxes.",
+      "translation": "球在兩個箱子之間。"
+    },
+    {
+      "word": "behind",
+      "pos": "prep.",
+      "meaning": "在……後面",
+      "example": "The dog is behind the sofa.",
+      "translation": "狗在沙發後面。"
+    },
+    {
+      "word": "in front of",
+      "pos": "prep.",
+      "meaning": "在……前面",
+      "example": "We are in front of the museum.",
+      "translation": "我們在博物館前面。"
+    },
+    {
+      "word": "special",
+      "pos": "adj.",
+      "meaning": "特別的",
+      "example": "Today is a special day.",
+      "translation": "今天是個特別的日子。"
+    },
+    {
+      "word": "inside",
+      "pos": "prep.",
+      "meaning": "在……裡面",
+      "example": "The key is inside the box.",
+      "translation": "鑰匙在盒子裡。"
+    },
+    {
+      "word": "right",
+      "pos": "adv.",
+      "meaning": "正好；就",
+      "example": "The bus stop is right outside.",
+      "translation": "公車站就在外面。"
+    },
+    {
+      "word": "each other",
+      "pos": "pron.",
+      "meaning": "彼此",
+      "example": "We help each other with homework.",
+      "translation": "我們互相幫忙寫作業。"
+    },
+    {
+      "word": "above",
+      "pos": "prep.; adv.",
+      "meaning": "在……上方；在上方",
+      "example": "A lamp hangs above the desk.",
+      "translation": "一盞燈掛在書桌上方。"
+    },
+    {
+      "word": "enough",
+      "pos": "adj.; adv.; pron.",
+      "meaning": "足夠（的）",
+      "example": "We have enough chairs.",
+      "translation": "我們有足夠的椅子。"
+    },
+    {
+      "word": "person",
+      "pos": "n.",
+      "meaning": "人",
+      "example": "Only one person is in the room.",
+      "translation": "房間裡只有一個人。"
+    }
+  ],
+  "grammar": [
+    {
+      "id": "demonstratives",
+      "title": "指示詞 this / that / these / those",
+      "pattern": "This / That + is + 單數；These / Those + are + 複數.",
+      "tip": "this 和 these 指近處，that 和 those 指遠處。複數指示詞要和 are 搭配。",
+      "example": "These are my brushes. Those are your markers.",
+      "translation": "這些是我的筆刷。那些是你的彩色筆。"
+    },
+    {
+      "id": "plurals",
+      "title": "名詞複數",
+      "pattern": "一般加 -s；部分加 -es；子音 + y 改 -ies",
+      "tip": "留意拼法，例如 brush → brushes、box → boxes、baby → babies。mouse → mice 是不規則變化。",
+      "example": "There are two boxes and three brushes on my table.",
+      "translation": "我的桌上有兩個盒子和三支筆刷。"
+    },
+    {
+      "id": "where",
+      "title": "Where 問句",
+      "pattern": "Where + is / are + 主詞?",
+      "tip": "依主詞的單複數選 be；簡答可用 It is 或 They are 加地點。",
+      "example": "Where are my keys? They are in your bag.",
+      "translation": "我的鑰匙在哪裡？它們在你包包裡。"
+    },
+    {
+      "id": "place",
+      "title": "位置介系詞",
+      "pattern": "主詞 + be + 介系詞 + 地點.",
+      "tip": "in 表裡面，on 表接觸表面，above 表在上方。between A and B 表在兩者之間。",
+      "example": "The chair is between the door and the desk.",
+      "translation": "椅子在門和書桌之間。"
+    }
+  ]
+}

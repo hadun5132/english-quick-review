@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>教材管理｜國一英語複習</title>
+<link rel="stylesheet" href="/style.css">
+<script type="module" src="/admin/ui.js"></script>
+</head>
+<body>
+<header><div class="wrap"><p class="kicker">本機管理</p><h1>整理課程教材</h1><nav><a href="/">開啟學生版</a></nav></div></header>
+<main class="wrap">
+<form id="import">
+<label>課別 <select id="units"></select></label>
+<label id="new-unit" hidden>新課課號 <input id="number" type="number" min="1" max="999" value="3"></label>
+<label>教材（PPTX、DOCX 或文字型 PDF，單檔最多 25 MB）
+<input id="files" type="file" accept=".pptx,.docx,.pdf" multiple required></label>
+<button>上傳並整理</button>
+</form>
+<p role="status" id="status" aria-live="polite"></p>
+<button id="retry" type="button" hidden>重試發布／檢查部署</button>
+<section id="editor" hidden>
+<h2>審閱草稿</h2>
+<p>勾選後才會納入預覽。若有差異，可展開查看原內容。</p>
+<label>課名 <input id="title" maxlength="160"></label>
+<h3>單字</h3><div id="words" class="grid"></div>
+<h3>文法</h3><div id="grammar" class="grid"></div>
+<p><button id="preview" type="button">預覽合併結果</button></p>
+</section>
+<section id="review" hidden>
+<h2 id="preview-title"></h2>
+<h3>合併後的單字</h3><div id="preview-words" class="grid"></div>
+<h3>合併後的文法</h3><div id="preview-grammar" class="grid"></div>
+<p><button id="publish" type="button">確認發布到公開網站</button></p>
+</section>
+</main>
+</body></html>

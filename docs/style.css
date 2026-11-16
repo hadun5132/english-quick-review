@@ -1,0 +1,28 @@
+*{box-sizing:border-box}
+:root{color-scheme:light;--ink:#172940;--muted:#445970;--paper:#f8f5ec;--line:#ddd7c9;--accent:#23594e}
+body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.65 "Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif}
+.wrap{max-width:68rem;margin:auto;padding:2rem clamp(1rem,5vw,4rem)}
+header{background:#172940;color:#fff}
+.kicker{font-size:.87rem;letter-spacing:.09em;font-weight:700;margin:0 0 .35rem}
+header .kicker{color:#b6d6cb}
+h1,h2,h3,h4{line-height:1.2;margin:.25em 0 .6em}
+h1{font-size:clamp(2.25rem,6vw,4.7rem)}
+h2{font-family:Georgia,serif;font-size:clamp(2rem,5vw,4.25rem);overflow-wrap:anywhere}
+h3{font-size:1.5rem;border-bottom:2px solid var(--line);padding-bottom:.6rem}
+h4{font-size:1.25rem}
+nav{display:flex;flex-wrap:wrap;gap:.6rem}
+nav a,button{display:inline-block;border:1px solid currentColor;border-radius:.45rem;padding:.45rem .9rem;color:inherit;font:inherit;text-decoration:none;background:transparent;cursor:pointer}
+nav a[aria-current]{background:#daeee3;color:#172940;border-color:#daeee3;font-weight:700}
+:focus-visible{outline:3px solid #be6c22;outline-offset:3px}
+.jump{color:var(--accent);margin-bottom:2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:.9rem}
+section{margin:1.7rem 0}
+.card{background:#fffdf7;border:1px solid var(--line);border-radius:.7rem;padding:1.1rem;overflow-wrap:anywhere}
+.card p{margin:.4rem 0}
+.translation,.pos{color:var(--muted)}
+.pattern{font-weight:700;color:var(--accent)}
+input,select,textarea{font:inherit;max-width:100%;padding:.35rem;color:inherit}
+label{display:block;margin:.6rem 0}
+textarea{width:100%;min-height:4rem}
+button:disabled{opacity:.55;cursor:wait}
+[hidden]{display:none!important}

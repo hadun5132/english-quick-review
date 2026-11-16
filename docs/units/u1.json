@@ -1,0 +1,251 @@
+{
+  "unit": 1,
+  "title": "Who’s That Handsome Boy?",
+  "words": [
+    {
+      "word": "handsome",
+      "pos": "adj.",
+      "meaning": "英俊的",
+      "example": "Leo looks handsome in his blue coat.",
+      "translation": "里歐穿藍色外套看起來很英俊。"
+    },
+    {
+      "word": "new",
+      "pos": "adj.",
+      "meaning": "新的",
+      "example": "This is my new bike.",
+      "translation": "這是我的新腳踏車。"
+    },
+    {
+      "word": "classmate",
+      "pos": "n.",
+      "meaning": "同學",
+      "example": "Mia is my classmate.",
+      "translation": "米雅是我的同學。"
+    },
+    {
+      "word": "young",
+      "pos": "adj.",
+      "meaning": "年輕的",
+      "example": "Our coach is young.",
+      "translation": "我們的教練很年輕。"
+    },
+    {
+      "word": "woman",
+      "pos": "n.",
+      "meaning": "女人",
+      "example": "That woman is a pilot.",
+      "translation": "那位女士是飛行員。"
+    },
+    {
+      "word": "very",
+      "pos": "adv.",
+      "meaning": "非常",
+      "example": "My room is very small.",
+      "translation": "我的房間非常小。"
+    },
+    {
+      "word": "beautiful",
+      "pos": "adj.",
+      "meaning": "美麗的",
+      "example": "The lake is beautiful today.",
+      "translation": "今天的湖很美。"
+    },
+    {
+      "word": "too",
+      "pos": "adv.",
+      "meaning": "也",
+      "example": "I like apples, too.",
+      "translation": "我也喜歡蘋果。"
+    },
+    {
+      "word": "Nice to meet you.",
+      "pos": "句型",
+      "meaning": "很高興認識你。",
+      "example": "Hi, I'm Nora. Nice to meet you.",
+      "translation": "嗨，我是諾拉。很高興認識你。"
+    },
+    {
+      "word": "cousin",
+      "pos": "n.",
+      "meaning": "堂表兄弟姊妹",
+      "example": "My cousin lives in Tainan.",
+      "translation": "我的表親住在台南。"
+    },
+    {
+      "word": "really",
+      "pos": "adv.",
+      "meaning": "真的；很",
+      "example": "This soup is really good.",
+      "translation": "這碗湯真的很好喝。"
+    },
+    {
+      "word": "year(s) old",
+      "pos": "片語",
+      "meaning": "……歲",
+      "example": "My cat is three years old.",
+      "translation": "我的貓三歲了。"
+    },
+    {
+      "word": "I see.",
+      "pos": "句型",
+      "meaning": "我懂了。",
+      "example": "I see. You're Ben's sister.",
+      "translation": "我懂了。妳是班的姊姊。"
+    },
+    {
+      "word": "singer",
+      "pos": "n.",
+      "meaning": "歌手",
+      "example": "My aunt is a singer.",
+      "translation": "我阿姨是歌手。"
+    },
+    {
+      "word": "office worker",
+      "pos": "n.",
+      "meaning": "上班族",
+      "example": "Nina is an office worker.",
+      "translation": "妮娜是上班族。"
+    },
+    {
+      "word": "housewife",
+      "pos": "n.",
+      "meaning": "家庭主婦",
+      "example": "Her grandmother was a housewife.",
+      "translation": "她的祖母曾是家庭主婦。"
+    },
+    {
+      "word": "police officer",
+      "pos": "n.",
+      "meaning": "警察",
+      "example": "That police officer helps us.",
+      "translation": "那位警察幫助我們。"
+    },
+    {
+      "word": "writer",
+      "pos": "n.",
+      "meaning": "作家",
+      "example": "A writer lives next door.",
+      "translation": "有位作家住在隔壁。"
+    },
+    {
+      "word": "uncle",
+      "pos": "n.",
+      "meaning": "叔伯；舅舅",
+      "example": "My uncle makes great bread.",
+      "translation": "我叔叔很會做麵包。"
+    },
+    {
+      "word": "aunt",
+      "pos": "n.",
+      "meaning": "阿姨；姑姑",
+      "example": "My aunt has two cats.",
+      "translation": "我姑姑養了兩隻貓。"
+    },
+    {
+      "word": "wife",
+      "pos": "n.",
+      "meaning": "妻子",
+      "example": "His wife teaches music.",
+      "translation": "他的妻子教音樂。"
+    },
+    {
+      "word": "daughter",
+      "pos": "n.",
+      "meaning": "女兒",
+      "example": "Their daughter likes drawing.",
+      "translation": "他們的女兒喜歡畫畫。"
+    },
+    {
+      "word": "husband",
+      "pos": "n.",
+      "meaning": "丈夫",
+      "example": "Her husband is a nurse.",
+      "translation": "她的丈夫是護理師。"
+    },
+    {
+      "word": "son",
+      "pos": "n.",
+      "meaning": "兒子",
+      "example": "Their son is ten years old.",
+      "translation": "他們的兒子十歲。"
+    },
+    {
+      "word": "dear",
+      "pos": "adj.",
+      "meaning": "親愛的",
+      "example": "Dear Grandma, I miss you.",
+      "translation": "親愛的奶奶，我想妳。"
+    },
+    {
+      "word": "family",
+      "pos": "n.",
+      "meaning": "家庭；家人",
+      "example": "My family eats dinner together.",
+      "translation": "我們全家一起吃晚餐。"
+    },
+    {
+      "word": "elementary school",
+      "pos": "n.",
+      "meaning": "國小",
+      "example": "That elementary school has a garden.",
+      "translation": "那所國小有一座花園。"
+    },
+    {
+      "word": "junior high school",
+      "pos": "n.",
+      "meaning": "國中",
+      "example": "My brother is in junior high school.",
+      "translation": "我哥哥在讀國中。"
+    },
+    {
+      "word": "baby",
+      "pos": "n.; adj.",
+      "meaning": "嬰兒；年幼的",
+      "example": "Look at the baby turtle!",
+      "translation": "看那隻小海龜！"
+    }
+  ],
+  "grammar": [
+    {
+      "id": "be-statements",
+      "title": "be 動詞的直述與否定",
+      "pattern": "主詞 + am / is / are (+ not) + 補語.",
+      "tip": "I 搭配 am，單數第三人稱搭配 is，you 和複數主詞搭配 are。not 放在 be 後面。",
+      "example": "I am a student. My sister is not a student.",
+      "translation": "我是學生。我姊姊不是學生。"
+    },
+    {
+      "id": "be-yes-no",
+      "title": "Yes/No 問答",
+      "pattern": "Am / Is / Are + 主詞 + 補語?",
+      "tip": "把 be 移到主詞前面。肯定簡答用 Yes, she is.，句尾的 she is 要寫完整。",
+      "example": "Is Ava a nurse? Yes, she is.",
+      "translation": "艾娃是護理師嗎？對，她是。"
+    },
+    {
+      "id": "adjectives",
+      "title": "形容詞",
+      "pattern": "形容詞 + 名詞；或 主詞 + be + 形容詞.",
+      "tip": "形容詞可修飾名詞，也可放在 be 後面。形容詞本身沒有複數變化。",
+      "example": "Leo is a young singer. His songs are popular.",
+      "translation": "里歐是位年輕的歌手。他的歌很受歡迎。"
+    },
+    {
+      "id": "articles",
+      "title": "不定冠詞 a / an",
+      "pattern": "a + 子音開頭的發音；an + 母音開頭的發音",
+      "tip": "依發音選冠詞，例如 a uniform 和 an hour。單數可數職業名詞通常需要冠詞。",
+      "example": "My cousin is an artist.",
+      "translation": "我的表親是一位藝術家。"
+    },
+    {
+      "id": "who",
+      "title": "Who 問句",
+      "pattern": "Who + is / are + 主詞?",
+      "tip": "詢問身分時用 Who。主詞是單數時用 is、複數時用 are。",
+      "example": "Who is that boy? He is my brother.",
+      "translation": "那個男孩是誰？他是我弟弟。"
+    }
+  ]
+}
