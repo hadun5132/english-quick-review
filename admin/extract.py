@@ -1,6 +1,7 @@
 """擷取教材文字，保留投影片與頁面邊界。"""
 import io
 import json
+import posixpath
 import re
 import sys
 import zipfile
@@ -9,15 +10,31 @@ from xml.etree import ElementTree as XML
 MAX_EXPANDED = 120 * 1024 * 1024
 
 
+def slide_paths(archive):
+    names = archive.namelist()
+    presentation = "ppt/presentation.xml"
+    if presentation not in names:
+        pages = [name for name in names if re.fullmatch(r"ppt/slides/slide\d+\.xml", name)]
+        return sorted(pages, key=lambda name: int(re.search(r"(\d+)\.xml", name)[1]))
+    relations = XML.fromstring(archive.read("ppt/_rels/presentation.xml.rels"))
+    targets = {node.attrib["Id"]: node.attrib["Target"] for node in relations}
+    root = XML.fromstring(archive.read(presentation))
+    paths = []
+    for slide in root.findall("./{*}sldIdLst/{*}sldId"):
+        relation = next(value for name, value in slide.attrib.items() if name.endswith("}id"))
+        target = targets[relation]
+        path = target.lstrip("/") if target.startswith("/") else posixpath.normpath("ppt/" + target)
+        paths.append(path)
+    return paths
+
+
 def office(raw, ext):
     with zipfile.ZipFile(io.BytesIO(raw)) as archive:
         entries = archive.infolist()
         if sum(entry.file_size for entry in entries) > MAX_EXPANDED:
             raise ValueError("解壓縮後的教材太大。")
-        names = archive.namelist()
         if ext == "pptx":
-            pages = [name for name in names if re.fullmatch(r"ppt/slides/slide\d+\.xml", name)]
-            pages.sort(key=lambda name: int(re.search(r"(\d+)\.xml", name)[1]))
+            pages = slide_paths(archive)
         else:
             pages = ["word/document.xml"]
         result = []
@@ -27,7 +44,10 @@ def office(raw, ext):
                 "".join(node.text or "" for node in paragraph.iter() if node.tag.endswith("}t"))
                 for paragraph in root.iter() if paragraph.tag.endswith("}p")
             ]
-            result.append("\n".join(paragraphs))
+            if ext == "docx":
+                result.extend(paragraphs)
+            else:
+                result.append("\n".join(paragraphs))
         return result
 
 

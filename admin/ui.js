@@ -1,5 +1,5 @@
 import { renderCards } from "/render.js";
-import { key, merge, sections, validateContent } from "/admin/content.mjs";
+import { key, merge, missingChinese, sections, validateContent } from "/admin/content.mjs";
 
 const get = id => document.getElementById(id);
 const status = get("status");
@@ -27,9 +27,16 @@ function invalidate() {
   approval = undefined;
 }
 
-function card(section, entry, seen) {
+function sourceLabel({ name, kind, first, last }) {
+  const range = first === last ? first : first + "–" + last;
+  return name + " · 第 " + range + " " + kind;
+}
+
+function card(section, { entry, source, needsReview }, seen) {
   const id = key(section, entry);
   const existing = base[section].find(item => key(section, item) === id);
+  const similar = !existing && section === "words" && base.words.find(item =>
+    key(section, { ...item, pos: entry.pos }) === id);
   const duplicate = seen.has(id);
   seen.add(id);
   const same = existing && JSON.stringify(existing) === JSON.stringify(entry);
@@ -38,13 +45,17 @@ function card(section, entry, seen) {
   const choice = node("label");
   const checkbox = node("input");
   checkbox.type = "checkbox";
-  checkbox.checked = !existing && !duplicate;
-  choice.append(checkbox, duplicate ? " 本批次重複" : same ? " 與既有內容相同" : existing ? " 與既有內容有差異" : " 新增條目");
+  checkbox.checked = !existing && !similar && !duplicate && !needsReview;
+  choice.append(checkbox, duplicate ? " 本批次重複" : same ? " 與既有內容相同" : existing ? " 與既有內容有差異" : similar ? " 與既有內容同詞、詞性不同" : " 新增條目");
   article.append(choice, node("h4", entry.word || entry.title));
-  if (existing) {
+  const location = node("p", "來源位置 " + sourceLabel(source));
+  location.className = "pos";
+  article.append(location);
+  if (needsReview) article.append(node("p", "待確認：請先補上中文釋義或翻譯。"));
+  if (existing || similar) {
     const details = node("details");
     const previous = node("div");
-    renderCards(previous, [existing], section === "grammar");
+    renderCards(previous, [existing || similar], section === "grammar");
     details.append(node("summary", "查看原內容"), previous);
     article.append(details);
   }
@@ -59,7 +70,7 @@ function card(section, entry, seen) {
   });
   article.addEventListener("input", invalidate);
   get(section).append(article);
-  return { checkbox, inputs };
+  return { checkbox, inputs, category: duplicate || same ? "duplicate" : existing || similar ? "changed" : "added" };
 }
 
 async function loadUnits() {
@@ -98,7 +109,7 @@ get("import").addEventListener("submit", newTask(async () => {
   const newUnit = get("units").value === "new";
   const unit = Number(get(newUnit ? "number" : "units").value);
   const files = [...get("files").files];
-  const draft = { words: [], grammar: [] };
+  const draft = { words: [], grammar: [], questions: [] };
   const initial = await api("/api/unit?unit=" + unit);
   if (newUnit && initial.title) throw new Error("這個課號已存在，請從清單選取。");
   for (const file of files) {
@@ -107,9 +118,9 @@ get("import").addEventListener("submit", newTask(async () => {
     const params = new URLSearchParams({ unit, name: file.name });
     const result = await api("/api/import?" + params, { method: "POST", body: file });
     if (JSON.stringify(result.base) !== JSON.stringify(initial)) throw new Error("課程已更新，請重試。");
-    for (const section of sections) draft[section].push(...result.draft[section]);
+    for (const section of [...sections, "questions"]) draft[section].push(...result.draft[section]);
   }
-  if (!draft.words.length && !draft.grammar.length) throw new Error("教材中未找到可整理的單字或文法。");
+  if (!draft.words.length && !draft.grammar.length && !draft.questions.length) throw new Error("教材中未找到可整理的單字或文法。");
   invalidate();
   base = initial;
   entries = Object.fromEntries(sections.map(section => {
@@ -117,6 +128,14 @@ get("import").addEventListener("submit", newTask(async () => {
     const seen = new Set();
     return [section, draft[section].map(entry => card(section, entry, seen))];
   }));
+  const categories = Object.values(entries).flat().map(entry => entry.category);
+  get("import-summary").textContent = [
+    ["added", "新增"], ["changed", "建議修改"], ["duplicate", "重複"]
+  ].map(([type, label]) => label + " " + categories.filter(category => category === type).length + " 筆")
+    .concat("待確認 " + draft.questions.length + " 筆").join(" · ");
+  get("questions").hidden = !draft.questions.length;
+  get("question-list").replaceChildren(...draft.questions.map(({ text, source }) =>
+    node("li", text + "（" + sourceLabel(source) + "）")));
   get("title").value = base.title;
   get("editor").hidden = false;
   status.textContent = "整理完成。請審閱第 " + unit + " 課草稿。";
@@ -130,9 +149,23 @@ get("preview").addEventListener("click", newTask(async () => {
       Object.fromEntries(entry.inputs.map(([field, input]) => [field, input.value])))
   ])));
   if (!chosen.words.length && !chosen.grammar.length) throw new Error("請勾選至少一筆要發布的條目。");
+  if (sections.some(section => chosen[section].some(entry => missingChinese(section, entry)))) {
+    throw new Error("請先補齊勾選條目的中文釋義與例句翻譯。");
+  }
   const combined = merge(base, chosen);
   approval = { unit: base.unit, base, title, chosen };
   get("preview-title").textContent = title;
+  const previous = base.words.length + base.grammar.length;
+  const total = combined.words.length + combined.grammar.length;
+  const added = total - previous;
+  const modified = sections.reduce((count, section) => {
+    const old = new Map(base[section].map(entry => [key(section, entry), JSON.stringify(entry)]));
+    return count + chosen[section].filter(entry => {
+      const prior = old.get(key(section, entry));
+      return prior && prior !== JSON.stringify(entry);
+    }).length;
+  }, 0);
+  get("preview-summary").textContent = "新增 " + added + " 筆 · 更新 " + modified + " 筆 · 合併後共 " + total + " 筆";
   renderCards(get("preview-words"), combined.words);
   renderCards(get("preview-grammar"), combined.grammar, true);
   get("review").hidden = false;

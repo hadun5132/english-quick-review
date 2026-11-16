@@ -13,7 +13,10 @@ const shape = Object.fromEntries(sections.map(section => [section, {
     properties: Object.fromEntries(fields[section].map(field => [field, { type: "string" }]))
   }
 }]));
-export const schema = { type: "object", additionalProperties: false, required: sections, properties: shape };
+export const schema = {
+  type: "object", additionalProperties: false, required: [...sections, "questions"],
+  properties: { ...shape, questions: { type: "array", items: { type: "string" } } }
+};
 
 export function validateContent(input, duplicates = false) {
   return Object.fromEntries(sections.map(section => {
@@ -38,6 +41,11 @@ export function validateContent(input, duplicates = false) {
   }));
 }
 
+export function missingChinese(section, entry) {
+  const explanation = section === "words" ? entry.meaning : entry.tip;
+  return !/\p{Script=Han}/u.test(explanation) || !/\p{Script=Han}/u.test(entry.translation);
+}
+
 export function merge(base, chosen) {
   return Object.fromEntries(sections.map(section => {
     const entries = new Map(base[section].map(entry => [key(section, entry), entry]));
@@ -49,18 +57,24 @@ export function merge(base, chosen) {
 export function chunks(pages, limit = 4500) {
   const result = [];
   let pending = "";
-  for (const page of pages) {
+  let first;
+  let last;
+  const flush = () => {
+    if (pending) result.push({ text: pending, first, last });
+    pending = "";
+  };
+  for (const [index, page] of pages.entries()) {
     for (const line of page.split(/\r?\n/)) {
       for (let start = 0; start < line.length; start += limit) {
         const part = line.slice(start, start + limit);
-        if (pending.length + 1 + part.length > limit) {
-          result.push(pending);
-          pending = "";
-        }
+        if (!part.trim()) continue;
+        if (pending && pending.length + 1 + part.length > limit) flush();
+        if (!pending) first = index + 1;
+        last = index + 1;
         pending = pending ? pending + "\n" + part : part;
       }
     }
   }
-  if (pending) result.push(pending);
+  flush();
   return result;
 }

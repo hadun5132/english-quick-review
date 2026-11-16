@@ -21,7 +21,9 @@
 <button id="retry" type="button" hidden>重試發布／檢查部署</button>
 <section id="editor" hidden>
 <h2>審閱草稿</h2>
-<p>勾選後才會納入預覽。若有差異，可展開查看原內容。</p>
+<p>勾選後才會納入預覽。可依來源位置核對教材，並展開查看原內容。</p>
+<p id="import-summary" role="status"></p>
+<section id="questions" hidden><h3>待確認</h3><ul id="question-list"></ul></section>
 <label>課名 <input id="title" maxlength="160"></label>
 <h3>單字</h3><div id="words" class="grid"></div>
 <h3>文法</h3><div id="grammar" class="grid"></div>
@@ -29,6 +31,7 @@
 </section>
 <section id="review" hidden>
 <h2 id="preview-title"></h2>
+<p id="preview-summary"></p>
 <h3>合併後的單字</h3><div id="preview-words" class="grid"></div>
 <h3>合併後的文法</h3><div id="preview-grammar" class="grid"></div>
 <p><button id="publish" type="button">確認發布到公開網站</button></p>

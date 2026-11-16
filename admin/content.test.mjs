@@ -35,5 +35,11 @@ test("合併保留原有條目，並以標準化詞頭及詞性更新重複項�
 });
 
 test("上傳文字分段保留所有字元", () => {
-  assert.deepEqual(chunks(["abcd", "efg", "hijklmn"], 5), ["abcd", "efg", "hijkl", "mn"]);
+  assert.deepEqual(chunks(["abcd", "", "efg", "hijklmn"], 5), [
+    { text: "abcd", first: 1, last: 1 },
+    { text: "efg", first: 3, last: 3 },
+    { text: "hijkl", first: 4, last: 4 },
+    { text: "mn", first: 4, last: 4 }
+  ]);
+  assert.deepEqual(chunks(["ab", "cd"], 5), [{ text: "ab\ncd", first: 1, last: 2 }]);
 });
