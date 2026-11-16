@@ -2,6 +2,7 @@
 setlocal
 cd /d "%~dp0"
 set "runtime=%USERPROFILE%\.cache\codex-runtimes\codex-primary-runtime\dependencies"
+if not defined OLLAMA_MODEL if exist ".local\model.txt" set /p OLLAMA_MODEL=<".local\model.txt"
 set "node_bin=node.exe"
 where.exe node.exe >nul 2>&1
 if errorlevel 1 if exist "%runtime%\node\bin\node.exe" set "node_bin=%runtime%\node\bin\node.exe"

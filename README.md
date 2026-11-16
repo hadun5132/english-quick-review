@@ -6,7 +6,7 @@
 
 1. 安裝 Node.js 22 以上、Python 3、Git、GitHub CLI 和 Ollama。
 2. 執行 `python -m pip install -r admin/requirements.txt` 支援 PDF。若 Python 不在 PATH，可把 `REVIEW_PYTHON` 指向 Python 執行檔。
-3. 啟動 Ollama 並執行 `ollama pull qwen3:4b`。可用 `OLLAMA_MODEL` 指定另一個已下載、支援結構化輸出的本機模型。
+3. 啟動 Ollama 並執行 `ollama pull qwen3:4b`。可用 `OLLAMA_MODEL` 指定另一個已下載、支援結構化輸出的本機模型。Windows 啟動器也可從本機的 `.local/model.txt` 第一行讀取模型名稱。
 4. 在 Windows 可雙擊 `start-review.cmd`。啟動器會在系統未提供 Node.js 時嘗試使用已安裝的 Codex 執行環境。在終端機也可在專案根目錄執行 `node admin/server.mjs`。學生版預覽位於 [本機首頁](http://127.0.0.1:4173/)，上傳介面位於 [本機管理頁](http://127.0.0.1:4173/admin/)。
 
 ## 新增教材
